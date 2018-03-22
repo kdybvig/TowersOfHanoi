@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>Towers of Hanoi Project</title>
+</head>
+
+<body>
+  <div id ="endscreen">
+    <h1><strong>You Won!!</strong> </h1>
+    <btn id= "replay"> Play again? </btn>
+  </div>
+      <div class = "screen">
+        <btn id = "restart" onclick = "restartGame()">RESTART</btn>
+        <h1 id="demo">Towers of Hanoi Puzzle</h1>
+        <div class="game">
+    <div class="tower" id="tower-a">
+      <btn id="stone-1">
+      </btn>
+      <btn id="stone-2">
+      </btn>
+      <btn id="stone-3">
+      </btn>
+      <btn id="stone-4">
+      </btn>
+      <btn id="stone-5">
+      </btn>
+      <btn id="stone-6">
+      </btn>
+      <btn id="stone-7">
+      </btn>
+      <btn id="stone-8">
+      </btn>
+      <btn id="bottom">
+      </btn>
+    </div>
+    <div class="tower" id="tower-b">
+    </div>
+    <div class="tower" id="tower-c">
+    </div>
+  </div>
+          </p>
+  <p id = "movesStones">
+  <span id = "movesCount">Minimum moves: <span id ="minMoves"></span>Your moves: <span id="yourMoves"></span></span> <span id = "selectors">Number of stones
+    <select id ="numStones">
+      <option value = "5">5</option>
+      <option value = "6">6</option>
+      <option value = "7">7</option>
+      <option value = "8">8</option>
+    </select>
+    <input type = "submit" value = "Start Over" onClick ="stoneChanger()"></input>
+  </span>
+  </span>
+<p id = "timerAndRecords"><span id = "timer">Timer <span class = "boldBlue"><span id = "minutes"></span>:<span id ="seconds"></span></span></span> <span id = "recordTime">Record Time <span class = boldBlue id = "newTime">00:00</span></span> <span id = "recordMoves">Record moves: <span class = "boldBlue" id = "newMoves">0</span></span></p>
+<p id ="error-message"></p>
+</div>
+  </div>
+</body>
+
+</html>
