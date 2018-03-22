@@ -1,4 +1,3 @@
-
 let stoneUp = false;
 let heighta = 5; // height of tower a
 let heightb = 0;
@@ -19,6 +18,7 @@ let yourMoves = 0;
 let startTime = Math.floor(Date.now()/1000);
 let recordTime;
 let recordMoves;
+
 
 function checkTime () {
   var currentTime = Math.floor(Date.now()/1000);
@@ -77,7 +77,28 @@ function checkTime () {
   document.getElementById("minutes").innerHTML = m;
   document.getElementById("seconds").innerHTML = s;
 }
-
+setInterval(function(){ checkTime() }, 1000);
+          document.getElementById("error-message").innerHTML = ""
+          yourMoves = 0;
+          document.getElementById("yourMoves").innerHTML = yourMoves;
+          stacka = 11111;
+          heighta = numStones;
+          stackb = 0;
+          heightb = 0;
+          stackc = 0;
+          heightc = 0;
+          stoneUp = false;
+        $("#end-game").css("display","none");
+        $(".screen").css("display","block");
+        for (i=0; i < numStones; i++) {
+          $("#stone-" + (i+1)).appendTo("#tower-a");
+          $("#stone-" + (i+1)).css("bottom", i*10 + "%");
+        }
+        for (i = 5; i < numStones; i++) {
+          stacka += Math.pow(10, i)
+          $("#stone-"+(i+1)).css("display", "block");
+        }
+}
 // liftStone turns towers white and raises stone
 function liftStone (stoneID) {
   if (stoneUp == false) {
@@ -118,37 +139,9 @@ function clickTower (towerID) {
                         }
 }
 }
-  
-  
 $( document ).ready(function() {
 document.getElementById("minMoves").innerHTML = minMoves;
 document.getElementById("yourMoves").innerHTML = yourMoves;
-
-
-
-setInterval(function(){ checkTime() }, 1000);
-          document.getElementById("error-message").innerHTML = ""
-          yourMoves = 0;
-          document.getElementById("yourMoves").innerHTML = yourMoves;
-          stacka = 11111;
-          heighta = numStones;
-          stackb = 0;
-          heightb = 0;
-          stackc = 0;
-          heightc = 0;
-          stoneUp = false;
-        $("#end-game").css("display","none");
-        $(".screen").css("display","block");
-        for (i=0; i < numStones; i++) {
-          $("#stone-" + (i+1)).appendTo("#tower-a");
-          $("#stone-" + (i+1)).css("bottom", i*10 + "%");
-        }
-        for (i = 5; i < numStones; i++) {
-          stacka += Math.pow(10, i)
-          $("#stone-"+(i+1)).css("display", "block");
-        }
-}
-
 //  tower a
 $("#tower-a").click(function(){
    stackx = stacka
